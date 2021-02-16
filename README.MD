@@ -2,4 +2,4 @@
 
 Cloning YouTube with JS
 
-express/ babel/ nodemon
+express/ babel/ nodemon/ morgan/ helmet/ cookie-parser/ body-parser
