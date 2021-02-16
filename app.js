@@ -4,12 +4,9 @@ import morgan from "morgan";
 import helmet from "helmet";
 import cookieParser from "cookie-parser";
 import bodyParser from "body-parser";
+import { userRouter } from "./router";
 
 const app = express();
-
-const PORT = 4000;
-
-const handleListening = () => console.log(`Listening on: http://localhost:${PORT}`);
 
 // req = request Object, res = response Object
 // res.send 는 req받은 것을 화면으로 보내주는 것이다.
@@ -28,5 +25,7 @@ app.get("/", handleHome);
 
 app.get("/profile", handleProfile);
 
-app.listen(PORT, handleListening);
-// listen이 실행하라고 명령하는 방식이다.
+app.use("/user", userRouter); // use는 router 안에 userRouter전부를 사용하겠다는 의미를 가진다.
+
+export default app;
+// export default 를 사용하여 다른 파일에서 이파일을 불러올때 middleware와 routes를 사용할 수 있게 해준다.
