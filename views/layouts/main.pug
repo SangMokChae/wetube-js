@@ -2,12 +2,12 @@
 doctype html
 html
   head
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css")
     title | Wetube
   body 
-    header
-      h1 WeTube
+    //- include를 사용해서 header와 footer를 불러온다.
+    include ../partials/header
     main
       block content
       //- block안에 다른 pug들이 들어갈 것이다
-    footer 
-      span &copy; WeTube
+    include ../partials/footer
