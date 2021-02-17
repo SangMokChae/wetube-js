@@ -1,11 +1,13 @@
 import express from "express";
+import { join, login, logout } from "../controllers/userController";
+import { home, search } from "../controllers/videoController";
 import routes from "../routes"; // ..밖의 자료위치
 const globalRouter = express.Router();
 
-globalRouter.get(routes.home, (req, res) => res.send('HOME'));
-globalRouter.get(routes.join, (req, res) => res.send('JOIN'));
-globalRouter.get(routes.login, (req, res) => res.send('LOGIN'));
-globalRouter.get(routes.logout, (req, res) => res.send('LOGOUT'));
-globalRouter.get(routes.search, (req, res) => res.send('SEARCH'));
+globalRouter.get(routes.home, home); // controller에 export를 해줘야 사용할 수 있는 기능이다.
+globalRouter.get(routes.search, search);
+globalRouter.get(routes.join, join);
+globalRouter.get(routes.login, login);
+globalRouter.get(routes.logout, logout);
 
 export default globalRouter;
