@@ -8,7 +8,7 @@ const SEARCH = "/search";
 // Users
 const USERS = "/users";
 const USER_DETAIL = "/:id"; // ex) /users/1 
-const EDIT_PROFILE = "/edit-profile";
+const EDIT_PROFILE = "/edit-profile"; // 주소창에 검색할때는 4000/users/edit-profile 이다.
 const CHANGE_PASSWORD = "/change-password";
 
 // /: -> 변수로 express가 인식한다.

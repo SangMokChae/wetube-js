@@ -2,4 +2,7 @@ extends layouts/main
 
 block content 
   .videos 
-    h1 Video
+    each item in videos 
+      h3= item.title 
+      p= item.description
+      
