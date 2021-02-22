@@ -1,0 +1,6 @@
+mixin videoBlock(video = {})
+  //- mixin 은 pug의 함수이다.
+  .videoBlock 
+    video.videoBlock__thumbnail(src=video.videoFile, controls=true)
+    h4.videoBlock__title=video.title
+    h6.videoBlock__videw=video.views

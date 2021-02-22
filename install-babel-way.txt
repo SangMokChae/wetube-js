@@ -30,3 +30,12 @@ npm start
 
 자세한 내용은 이곳을 참고하시면 돼요: https://babeljs.io/docs/en/babel-preset-env
 <from stra2003>
+
+
+/// video link 실행이 안될시 
+Video 재생 문제 해결되는거 정리
+(1) app.use( helmet({ contentSecurityPolicy: false })); 로 변경 app.js 에서
+or
+(2) meta(http-equiv="Content-Security-Policy" content="default-src *") 를 main.pug에서 head 밑에 추가
+
+사용 결과 1번을 추천
