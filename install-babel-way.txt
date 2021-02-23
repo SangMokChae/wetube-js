@@ -33,9 +33,14 @@ npm start
 
 
 /// video link 실행이 안될시 
-Video 재생 문제 해결되는거 정리
+middleware에 아래의 링크를 추가
+
+app.use(function(req, res, next) {
+res.setHeader("Content-Security-Policy", "script-src 'self' https://archive.org");
+return next();
+}); --> 이 방식이 search에 비디오도 재생 시켜준다.
+
+or 
 (1) app.use( helmet({ contentSecurityPolicy: false })); 로 변경 app.js 에서
 or
 (2) meta(http-equiv="Content-Security-Policy" content="default-src *") 를 main.pug에서 head 밑에 추가
-
-사용 결과 1번을 추천

@@ -18,3 +18,5 @@ express/ babel/ nodemon/ morgan/ helmet/ cookie-parser/ body-parser
 - [x] Upload
 - [ ] Video Detail
 - [x] Edit Video
+
+if search.pug will get error this(Cannot read property 'length' of undefined) then find to const search from videoController.js and take a close look the {pageTitle: "search" searchingBy and <"videos">!!!

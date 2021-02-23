@@ -18,10 +18,14 @@ const app = express();
 app.set('view engine', "pug");
 
 // middlewares
+app.use(function(req, res, next) {
+  res.setHeader("Content-Security-Policy", "script-src 'self' https://archive.org");
+  return next();
+});
+
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(helmet({ contentSecurityPolicy: false }));
 app.use(morgan("dev"));
 
 app.use(localsMiddleware);

@@ -4,10 +4,8 @@ export const home = (req, res) => {
 };
 
 export const search = (req, res) => {
-  const { query: { term: searchingBy } } = req // { query: { term } } = req === req.query.term
-  // = const searchingBy = req.query.term;
-  // query에 도달하고 싶으면 method = get이 필요하다.
-  res.render("search", { pageTitle: "Search", searchingBy: searchingBy });
+  const { query: { term: searchingBy } } = req;
+  res.render("search", { pageTitle: "Search", searchingBy, videos });
 } 
 
 export const upload = (req, res) => res.render("upload", { pageTitle: "Upload"});

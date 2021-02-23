@@ -4,11 +4,8 @@ html
   head
     link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css")
     title #{pageTitle} | #{siteName}
-    //- middleware.js 의 localMiddleware의 함수가 title에 실행된다.
   body 
-    //- include를 사용해서 header와 footer를 불러온다.
     include ../partials/header
     main
       block content
-      //- block안에 다른 pug들이 들어갈 것이다
     include ../partials/footer
