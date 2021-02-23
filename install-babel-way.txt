@@ -44,3 +44,6 @@ or
 (1) app.use( helmet({ contentSecurityPolicy: false })); 로 변경 app.js 에서
 or
 (2) meta(http-equiv="Content-Security-Policy" content="default-src *") 를 main.pug에서 head 밑에 추가
+
+#
+post인지 get인지 정확히 확인하자!!!!
