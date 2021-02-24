@@ -1,4 +1,3 @@
-import { videos } from "../db";
 import routes from "../routes"; // default export 할때는 import에 {}를 사용하지 않는다.
 
 export const home = (req, res) => {

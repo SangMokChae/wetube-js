@@ -2,7 +2,7 @@
 
 Cloning YouTube with JS
 
-express/ babel/ nodemon/ morgan/ helmet/ cookie-parser/ body-parser/ status-Code/ MongoDB/ mongoose.js(mongoDB connect with nodejs)
+express/ babel/ nodemon/ morgan/ helmet/ cookie-parser/ body-parser/ status-Code/ MongoDB/ mongoose.js(for mongoDB connecting with nodejs)/ dotenv
 
 @ MVC model
 

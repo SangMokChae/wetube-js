@@ -52,3 +52,12 @@ MongoDB 설치시 // chocolatey으로 다운 가능
 시스템 환경변수편집 - 환경변수(N) - Path 편집 - 새로 만들기
 - MongoDB 설치경로 추가 (예) C:\Program Files\MongoDB\Server\4.4\bin
 - VScode 재시작 방법 사용
+
+# mongoDB connect 단계에서 오류 발생시
+해당경고
+
+DeprecationWarning: current Server Discovery and Monitoring engine is deprecated, and will be removed in a future version. To use the new Server Discover and Monitoring engine, pass option { useUnifiedTopology: true } to the MongoClient constructor.
+가 뜰 경우, 요번에 입력한
+useNewUrlParser: true,
+useFindAndModify: false에
+추가로 useUnifiedTopology: true 입력하면 사라집니다.
