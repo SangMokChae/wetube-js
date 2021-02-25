@@ -75,3 +75,5 @@ exit --> db data 삭제 방법
 
 # upload video가 실행 되지 않을때
  home.pug에서 videoFile: video.fileUrl로 변경하면 된다.
+
+ #controller에서 어떤 data를 가지고 있다는 것을 표현하고 싶을때는 (:)과 이름을 넣으면 변수로 인식하게 한다.
