@@ -67,3 +67,11 @@ useFindAndModify: false에
 # 좋아요를 저장하거나 유저를 저장하거나 할때는 models안의 js에서 ref를 사용한다.
 
 videos 폴더는 DB에 관련된 폴더이다.
+
+##
+업로드한 영상 지우는거 공유합니다.
+export const home = async (req, res) => {
+await Video.deleteMany({});
+}
+
+cf) https://www.codegrepper.com/code-examples/whatever/mongoose+delete+all

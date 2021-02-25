@@ -1,9 +1,9 @@
 import routes from "../routes"; // default export 할때는 import에 {}를 사용하지 않는다.
-import video from "../models/Video"
+import Video from "../models/Video"
 
-export const home = async (req, res) => {
+export const home = async(req, res) => {
   try{
-    const videos = await video.find({});
+    const videos = await Video.find({});
     res.render("home", { pageTitle: "Home", videos });
   } catch(error) {
     console.log(error);
@@ -20,12 +20,17 @@ export const search = (req, res) => {
 
 export const getUpload = (req, res) => res.render("upload", { pageTitle: "Upload"});
 
-export const postUpload = (req, res) => {
+export const postUpload = async(req, res) => {
   const {
-    body: { file, title, description }
+    body: { title, description },
+    file: { path }
   } = req;
-  //To Do: Upload and save video
-  res.redirect(routes.videoDetail(324393));
+  const newVideo = await Video.create({
+    fileUrl: path,
+    title,
+    description
+  });
+  res.redirect(routes.videoDetail(newVideo.id));
 };
 
 export const videoDetail = (req, res) => res.render("videoDetail", { pageTitle: "Video Detail"});
