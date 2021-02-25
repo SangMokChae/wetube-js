@@ -68,10 +68,10 @@ useFindAndModify: false에
 
 videos 폴더는 DB에 관련된 폴더이다.
 
-##
-업로드한 영상 지우는거 공유합니다.
-export const home = async (req, res) => {
-await Video.deleteMany({});
-}
+### mongoDB사용법은 3.7장에 자세히 나온다.
+use we-tube
+db.videos.remove({})
+exit --> db data 삭제 방법
 
-cf) https://www.codegrepper.com/code-examples/whatever/mongoose+delete+all
+# upload video가 실행 되지 않을때
+ home.pug에서 videoFile: video.fileUrl로 변경하면 된다.

@@ -16,6 +16,7 @@ const app = express();
 
 // view engine setting
 app.set('view engine', "pug");
+app.use("/uploads", express.static("uploads")); // directoy에서 file을 보내주는 mw이다.
 
 // middlewares
 app.use(function(req, res, next) {

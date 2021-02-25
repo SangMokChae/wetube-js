@@ -1,7 +1,7 @@
 import multer from "multer";
 import routes from "./routes";
 
-export const multerVideo = multer({ dest: "videos/" });
+export const multerVideo = multer({ dest: "uploads/videos/" }); // /uploads/videos/라고 쓰면 root에 uploads를 생성하는 꼴이다.
 
 export const localsMiddleware = (req, res, next) => {
   res.locals.siteName = 'WeTube';
