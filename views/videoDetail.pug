@@ -4,7 +4,8 @@ block content
   .video__player 
     video(src=`/${video.fileUrl}`)
   .video__info 
-    a(href=routes.editVideo) Edit video
+    a(href=routes.editVideo(video.id)) Edit video
     h5.video__title=video.title
     span.video__views=video.views
     p.video__description=video.description
+    //- editVideo(video.id)는 비디오가 아이디를 보유하고 있다.

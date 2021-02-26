@@ -16,7 +16,7 @@ export const home = async(req, res) => {
 export const search = (req, res) => {
   const { query: { term: searchingBy } } = req;
   res.render("search", { pageTitle: "Search", searchingBy, videos });
-} 
+} ;
 
 export const getUpload = (req, res) => res.render("upload", { pageTitle: "Upload"});
 
@@ -40,12 +40,50 @@ export const videoDetail = async(req, res) => {
   try {
     const video = await Video.findById(id);
     // findById 는 mongoose의 query옵션중에 하나이다.
-    res.render("videoDetail", { pageTitle: "Video Detail", video}); // video변수를 템플릿에 전달
+    res.render("videoDetail", { pageTitle: video.title, video}); // video변수를 템플릿에 전달
   } catch(error) {
     res.redirect(routes.home);
   }
-}
+};
 
-export const editVideo = (req, res) => res.render("editVideo", { pageTitle: "Edit Video"});
+export const getEditVideo = async (req, res) => {
+  const {
+    params: { id }
+  } = req;
+  try {
+    const video = await Video.findById(id);
+    res.render("editVideo", {pageTitle: `Edit ${video.title}`, video }); // title이 된다.
+  } catch(error) {
+    console.log(error);
+    res.redirect(routes.home);
+  }
+};
 
-export const deleteVideo = (req, res) => res.render("deleteVideo", { pageTitle: "Delete Video"});
+export const postEditVideo = async(req, res) => {
+  const {
+    params: { id },
+    body: { title, description }
+  } = req;
+  try {
+    await Video.findOneAndUpdate({ _id: id }, { title, description });
+    // title과 description은 model/Video.js 의 내용에 부합한다. 그래서 title: title = title이런 식으로 생각하면 된다.
+    // mongoose가 인식하기 위해서 _id를 사용할때 "_"를 붙여줘야한다.
+    res.redirect(routes.videoDetail(id));
+  } catch(error) {
+    console.log(error);
+    res.redirect(routes.home);
+  }
+};
+// get은 채워넣는 작업  / post는 업데이트 하고 redirect하는 작업이다.
+
+export const deleteVideo = async(req, res) => {
+  const {
+    params: {id}
+  } = req;
+  try {
+    await Video.findOneAndRemove({ _id: id});
+  } catch(error) {
+    console.log(error);
+  }
+  res.redirect(routes.home);
+};
