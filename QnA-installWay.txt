@@ -77,3 +77,87 @@ exit --> db data 삭제 방법
  home.pug에서 videoFile: video.fileUrl로 변경하면 된다.
 
  #controller에서 어떤 data를 가지고 있다는 것을 표현하고 싶을때는 (:)과 이름을 넣으면 변수로 인식하게 한다.
+
+ ## ESlint 설치방법
+
+ 1. 아래 순서대로 eslint와 prettier플러그인 및 설정, prettier를 설치해주세요.
+npm install eslint -D
+npm install eslint-plugin-prettier -D
+npm install eslint-config-prettier -D
+npm install prettier -D
+
+2. npx eslint --init
+
+3. 이제 질문이 계속 나오는데 아래 순서대로 선택해주세요.
+- To check syntax, find problems, and enforce code style
+- JavaScript modules (import/export)
+- None of these
+- No
+- Node
+- Use a popular
+- Airbnb
+- Javascript
+- Yes
+
+4. 확장프로그램 검색으로 ESlint extension을 설치해주세요.
+
+5. VScode에서 윈도우는 Ctrl +, 맥은 Cmd +, 입력해주세요.
+
+6. 검색창에 actionon을 입력해준 뒤
+Eslint > Code Actions On Save 가 all로 되어있는지 확인해주세요.
+
+7. 그리고 바로 위에 Edit in setting.json을 클릭해 들어가주세요.
+editor.formatOnSave 가 ture로 되있는지 확인해주시고
+editor.codeActionsOnSave는 null로 되어있을텐데
+{ "source.fixAll":tre, "source.fixAll.eslint": false} 로 수정해주고 저장해주세요.
+
+8. 왼쪽사이드보시면 .eslintrc.js가 생성되어있을거에요.
+들어가셔서
+방법 1.(copy)
+  env: {
+  browser: true,
+  es2021: true,
+  node: true,
+  },
+  extends: [
+  'airbnb-base', "plugin:prettier/recommended"
+  ],
+  parserOptions: {
+  ecmaVersion: 12,
+  sourceType: 'module',
+  },
+  rules: {
+  "prettier/prettier": "off",
+  "no-console":"off",
+  "spaced-comment":"off",
+  "no-else-return":"off"
+  },
+  };
+
+방법 2.(copy) -- 권장
+  module.exports = {
+  env: {
+  browser: true,
+  es2020: true,
+  node: true,
+  },
+  extends: ["airbnb-base", "plugin:prettier/recommended"],
+  parserOptions: {
+  ecmaVersion: 11,
+  sourceType: "module",
+  },
+  rules: {
+  "prettier/prettier": "off",
+  "no-console": "off",
+  "spaced-comment": "off",
+  "no-else-return": "off"
+  },
+  };
+이렇게 수정해주고 저장해주세요.
+
+9. VScode의 오른쪽 하단에 빨간 금지아이콘과 함께 ESlint라고 있을거에요.
+눌러서 allow everywhere 으로 설정해주세요.
+그러면 이제 ESlint가 작동하기 시작해요.
+
+# 뭔가 설치된 npm install을 지울때는 npm uninstall something 이라고 작성하면 지워진다.
+## 만약 eslint를 사용할 경우 그냥 extention안에 존재하는 eslint만 다운받아도 충분하다.

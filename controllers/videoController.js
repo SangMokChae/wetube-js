@@ -3,7 +3,8 @@ import Video from "../models/Video"
 
 export const home = async(req, res) => {
   try{
-    const videos = await Video.find({});
+    const videos = await Video.find({}).sort({ _id: -1 }); 
+    // sort를 통해서 나중에 업로드 한 비디오가 위에 도달한다. 정렬 순서는 글자 순으로도 할 수있다.
     res.render("home", { pageTitle: "Home", videos });
   } catch(error) {
     console.log(error);
