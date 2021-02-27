@@ -247,3 +247,6 @@ https://github.com/webpack-contrib/extract-text-webpack-plugin -> 버전 4로 �
   +npm install closs-env
   + npm install --save-dev postcss 
   browserlist: "cover 99.5%" => overrideBrowserslist: "cover 99.5%
+
+#dev:assets and build:assets difference
+  dev:assets 파일을 그저 지켜보기만 한다.
