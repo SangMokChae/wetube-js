@@ -2,7 +2,7 @@
 
 Cloning YouTube with JS
 
-express/ babel/ nodemon/ morgan/ helmet/ cookie-parser/ body-parser/ status-Code/ MongoDB/ mongoose.js(for mongoDB connecting with nodejs)/ dotenv/ multer/ ESLint(Linter)/ regular expression(https://regex101.com/)/
+express/ babel/ nodemon/ morgan/ helmet/ cookie-parser/ body-parser/ status-Code/ MongoDB/ mongoose.js(for mongoDB connecting with nodejs)/ dotenv/ multer/ ESLint(Linter)/ regular expression(https://regex101.com/)/ webpack/ extract text webpack/ cross-env/ css-loader/ postcss-loader/ sass-loader/ autoprefixer/ node-sass/
 
 @ MVC model
 
