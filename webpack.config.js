@@ -9,6 +9,7 @@ const OUTPUT_DIR = path.join(__dirname, "static");
 const config = {
   entry: [ "@babel/polyfill", ENTRY_FILE],
   mode: MODE,
+  devtool: "source-map",
   module: { // 모듈을 발견할 때 마다,
     rules: [ // 규칙을 지정해준다.
       {

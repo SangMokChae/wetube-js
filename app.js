@@ -15,6 +15,9 @@ import userRouter from "./routers/userRouter";
 const app = express();
 
 // view engine setting
+app.use(
+  helmet({ contentSecurityPolicy: false })
+);
 app.set('view engine', "pug");
 app.use("/uploads", express.static("uploads")); // directoy에서 file을 보내주는 mw이다.
 app.use("/static", express.static("static"));
