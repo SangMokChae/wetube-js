@@ -250,3 +250,11 @@ https://github.com/webpack-contrib/extract-text-webpack-plugin -> 버전 4로 �
 
 #dev:assets and build:assets difference
   dev:assets 파일을 그저 지켜보기만 한다.
+
+js include with webpack err시에
+ app.use(
+  helmet({
+    contentSecurityPolicy: false,
+  })
+); 를 app에 추가하고
+webpack.config.js의 'mode: MODE,'다음줄에 devtool: "source-map"를 추가해 주자!!
