@@ -258,3 +258,9 @@ js include with webpack err시에
   })
 ); 를 app에 추가하고
 webpack.config.js의 'mode: MODE,'다음줄에 devtool: "source-map"를 추가해 주자!!
+
+##passport 를 쿠키를 생성해주는 미들웨어
+다른 앱들도 지원해준다. (ex: insta, googe, facebook atc)
+
+#passport-local mongoose = 사용자 기능을 추가해주는 것
+  -기본적인 사용자인증 -> 패스워드 변경 패스워드 확인, 패스워드 생성, 패스워드 암호화
